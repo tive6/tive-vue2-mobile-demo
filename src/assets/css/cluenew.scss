@@ -1,0 +1,380 @@
+.nclue{
+  .nclue-top{
+    z-index: 30;
+     width: 100%;
+    position: fixed;
+    top: $navHeight - 2px;
+    left: 0;
+    //background: #303648;
+    background-color: #fff;
+    //padding-bottom: 10px;
+    .nclue-body-tabs{
+      height: 44px*2;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .tabs-item{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 112px*2;
+        text-align: center;
+        position: relative;
+        .tabs-item-text{
+          text-align: center;
+          width: 112px*2;
+          flex-grow: 5;
+          font-size: 16px*2;
+          line-height:44px*2 ;
+          // padding-bottom: 9px*2;
+        }
+        .tabs-item-line{
+          position: absolute;
+          bottom: 0;
+          background: #2877FF;
+          border-radius: 2px*2;
+          border-radius: 2px*2;
+          width: 20px*2;
+          height: 4px*2;
+        }
+        &.tabs-item-disable {
+          .tabs-item-text {
+            color: #999;
+          }
+        }
+      }
+      .tabs-item-icon {
+        width: 68px;
+        position: absolute;
+        top: 0px;
+        right: -10px;
+      }
+      .tabs-item-action{
+        .tabs-item-text{
+          color:#333;
+          font-size: 16px*2;
+          font-weight: bold;
+          white-space:nowrap;
+        }
+  
+      }
+    }
+
+  }
+.dealers-content{
+  background:#F4F4F4;
+  .dealers-middle{
+    .components-card{
+       //因公共样式改变修改样式
+      .table-body{
+        .body-row{
+          .body-item:nth-child(2){
+            text-align: left !important;
+          }
+        }
+      }
+    }
+  }
+  .dealers-top-tooltip{
+    //padding: 0 12px*2;
+    margin-top: 20px*2;
+    align-items: flex-start;
+    .tooltip-item{
+      height: 100%;
+      flex: 1;
+      &:first-child {
+        flex: 0 0 35%;
+      }
+      &:nth-child(2) {
+        position: relative;
+        &:after {
+          content: '';
+          display: block;
+          width: 12px;
+          height: 100%;
+          background: url(./../img/clue/clue-icon-01.png) no-repeat center;
+          background-size: 100%;
+          position: absolute;
+          left: -60px;
+          top: 0;
+        }
+      }
+      .item-title{
+        justify-content: flex-start;
+        font-size: 11px*2;
+        color: #666666;
+        letter-spacing: 0.24px*2;
+        .item-vertical{
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: #3E73F9;
+          margin-right: 5px*2;
+        }
+      }
+      .item-num{
+        margin: 5px*2 0;
+        font-weight: bold;
+        font-size: 20px*2;
+        color: #333333;
+        span{
+          font-size: 10px*2;
+          margin-left: 2px*2;
+        }
+      }
+      .item-sequential{
+        justify-content: flex-start;
+        span{
+          font-size: 20px;
+          color:#999;
+        }
+      }
+      .rotate-up{
+        transform:rotate(-90deg);
+        margin-right: 4px;
+      }
+      .rotate-down{
+        transform:rotate(90deg);
+        margin-right: 4px;
+      }
+
+      .item-ratio {
+        font-size: 20px;
+        color: #999;
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .factory-top-tooltip {
+    .tooltip-item {
+      &:nth-child(1) {
+        flex: 0 0 30%;
+      }
+      &:nth-child(2) {
+        flex: 0 0 32%;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .select-body{
+    justify-content:flex-start;
+    > div{
+      line-height: 20px*2;
+      font-size: 14px*2;
+      border-radius: 14.5px*2;
+      color: #333333;
+      padding: 5px*2 12px*2;
+      letter-spacing: 0.31px*2;
+      background: #F6F6F6;
+    }
+    .select-action{
+      border-radius: 14.5px*2;
+      line-height: 20px*2;
+      background-image: linear-gradient(90deg, #59A4FF 1%, #3E73F9 100%);
+      color: #fff;
+      box-shadow: 0 2px 10px 0 rgba(62,115,249,0.42);
+      font-size: 14px*2;
+      letter-spacing: 0.31px*2;
+    }
+  }
+  #mo-bd-chart-dealersTop,#mo-bd-chart-dealersLine,#mo-bd-chart-dealersOrder{
+    width: 100%;
+    height: 250px*2;
+  }
+  .dealers-subtitle{
+    background: #F6F6F6;
+    border-radius: 6px*2;
+    margin: 20px*2 0 20px 0;
+    padding: 10px*2;
+    padding-right: 0;
+    .title{
+      font-size: 11px*2;
+      color: #666666;
+      margin-bottom: 6px*2;
+    }
+    .item-body{
+      justify-content: flex-start;
+      height: 100%;
+      .item-individual{
+        width: 25%;
+        //flex: 1;
+        .individual-text{
+          justify-content: flex-start;
+          font-size: 11px*2;
+          margin-bottom: 5px*2;
+          color: #666666;
+          .item-vertical{
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #3E73F9;
+            margin-right: 5px*2;
+          }
+        }
+        .item-num{
+          font-size: 16px*2;
+          color: #333333;
+          span{
+            font-size: 10px*2;
+          }
+        }
+      }
+    }
+    .item-body-first {
+      .item-individual {
+        flex: 0 0 calc(100% / 3);
+
+        &:first-child {
+          position: relative;
+
+          &:after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 100%;
+            background: url(./../img/clue/clue-icon-02.png) no-repeat center;
+            background-size: 100%;
+            position: absolute;
+            right: 30px;
+            top: 0;
+          }
+        }
+      }
+    }
+    .item-body-sd {
+      .item-individual {
+        flex: 0 0 calc(100% / 3);
+      }
+    }
+
+
+    .item-body-wrap {
+      width: 100%;
+      height: 160px;
+      //.van-swipe-item {
+      //  width: 46% !important;
+      //}
+    }
+
+    .item-sequential {
+      justify-content: flex-start;
+      margin: 16px 0;
+      span{
+        font-size: 20px;
+        color:#999;
+      }
+    }
+    .item-ratio {
+      font-size: 20px;
+      color: #999;
+      margin-top: 16px;
+    }
+
+  }
+}
+.dealers-StanceOperator{
+  width: 100%;
+  height: 44px*2;
+}
+.dealers-choose {
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  border-radius: 6px*2;
+}
+
+.dealers-choose-item {
+  white-space:nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  line-height: 66px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+  color: #333;
+  border-radius: 32px;
+  font-size: 28px;
+  margin-right: 16px;
+  padding: 0 30px;
+  &.dealers-choose-active {
+    background-image: linear-gradient(90deg, #59A4FF 1%, #3E73F9 100%);
+    box-shadow: 0 4px 10px 0 rgba(62,115,249,0.42);
+    color: #fff;
+  }
+}
+
+.dealers-choose-icon {
+  width: 0;
+  border: 10px solid transparent;
+  border-top: 14px solid #fff;
+  position: relative;
+  top: 5px;
+  margin-left: 12px;
+}
+
+
+
+
+
+
+.dealers-middle{
+  padding:15px*2;
+  position: relative;
+  margin: 0;
+  //background:url('../img/clue/top-bg.png') no-repeat top;
+  //background-size: 100%;
+  .card-subtitle{
+    .card-subtitle-title{
+      color: #666666;
+    }
+    .card-subtitle-num{
+      font-size: 14px*2;
+      color: #333333;
+      font-weight: bold;
+      margin-left: 5px*2;
+    }
+  }
+}
+.contrastBar-container{
+  .contrastBar-list{
+    margin-bottom:22px*2 ;
+    .contrastBar-body{
+      color:#333;
+      justify-content: center;
+      .contrastBar-left{
+        margin-right: 6px*2;
+        width: 70px*2;
+        font-weight: bold;
+        text-align: right;
+        overflow: hidden;
+      }
+      .contrastBar-right{
+        width: 70px*2;
+        margin-left: 6px*2;
+        font-weight: bold;
+      }
+  }
+  .contrastBar-title{
+    margin-top: 8px*2;
+    width: 100%;
+    text-align: center;
+    color: #666666;
+  }
+  }
+  .contrastBar-list:last-child{
+    margin-bottom: 5px*2;
+  }
+}
+}
+.highcharts-label{
+  text{
+    stroke:#fff !important;
+    // tspan{
+    //   font-size: 13px*2 !important;
+    // }
+  }
+}
