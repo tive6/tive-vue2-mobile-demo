@@ -102,16 +102,6 @@ export default {
       isShow: this.$store.getters['User/getUserShowNavBar'],
       navShow: false,
       routeName: '',
-      routesMap: {
-        1: {
-          url: '/clue/clue',
-          name: '线索总览',
-        },
-        2: {
-          url: '/clue/flow',
-          name: '流量总览',
-        },
-      },
       routesAuth: [],
       mocTabsIndex: 0,
       isMocard: false,
@@ -119,44 +109,25 @@ export default {
       iconList: {
         'clue-overview': '#fff',
       },
+      title: '',
     };
   },
   computed: {
-    ...mapGetters('Clue', {
-      title: 'getTitle',
-    }),
   },
   watch: {
     $route(to, from) {
       // 当前路由
       const { name, meta } = to;
-      this.$store.commit('Clue/setTitle', document.title);
+      this.title = this.$route.meta.title
       this.routeName = name;
-      this.informationShow = meta.informationShow;
-      if (to.name !== 'common-information' && from.name === 'finance-index') {
-        this.$store.commit('Finance/GET_PAGE_ID', '');
-      }
     },
   },
   async created() {
-    // this.getAuthRoutes()
-    // let ver = this.$utils.getCookie('x-app-version')
-    // let verNum = this.$utils.compareVersion(ver, '6.0.1')
-    // console.log(verNum)
   },
   mounted() {
     // this.setMoreMenu()
   },
   methods: {
-    async getAuthRoutes() {
-      this.$http.ajax({
-        url: '/nbi/uc/nbiUBusiness/listBusinessByCurrentUser?moduleId=1',
-      }).then((res) => {
-        res.forEach((item) => {
-          this.routesAuth.push(this.routesMap[item]);
-        });
-      });
-    },
     backward() {
       if (this.routeName === 'home') {
         this.closeView();

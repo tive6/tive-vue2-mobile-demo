@@ -1,16 +1,6 @@
-/*
- * @desc:
- * @author: zhangxin
- * @Date: 2020-06-25 00:38:13
- * @LastEditors: zhangxin
- * @LastEditTime: 2020-09-28 15:23:27
- */
 import axios from 'axios';
 import store from '@/store';
-// import Vuex from 'vuex'
-// import qs from 'querystring'
 import { Toast, Dialog } from 'vant';
-// import ClientUtils from '@/common/client'
 
 // axios.default.retry = 3 // 重试次数
 // axios.default.retryDelay = 1000
@@ -19,7 +9,7 @@ const instance = axios.create({
 });
 
 // 不重定向白名单
-const whiteList = ['/nbi/mocard/gas/hours', '/Employee/GetCurrentLoginUser'];
+const whiteList = ['/api/xx/xx', '/api/xx/xxx'];
 
 // request拦截器
 instance.interceptors.request.use(

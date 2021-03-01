@@ -7,12 +7,13 @@ import Vuex from 'vuex'
 import store from './store'
 import filters from './common/filters'
 import { ajax } from './api/ajax'
+import BP from '@/common/buryingPoint'
 import 'lib-flexible'
 import './assets/css/style.scss'
 
 import {
-  Icon, Popup, Toast, Dialog, Swipe, SwipeItem,
-  Lazyload, DropdownMenu, DropdownItem,
+  Icon, Popup, Toast, Dialog,
+  Lazyload
 } from 'vant'
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -33,11 +34,7 @@ VueRouter.prototype.push = function push(location) {
 Vue.use(Icon)
   .use(Popup)
   .use(Toast)
-  .use(Swipe)
-  .use(SwipeItem)
   .use(Dialog)
-  .use(DropdownMenu)
-  .use(DropdownItem)
   .use(Lazyload, {});
 
 Object.keys(filters).forEach((key) => {

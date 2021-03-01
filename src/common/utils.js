@@ -1,5 +1,4 @@
 import echarts from '@/common/echartsConfig.js'
-import moment from 'moment'
 const numToFixed = (num, n) => {
   var symbol = 1
   if (num < 0) {
@@ -222,11 +221,6 @@ export default {
   /**
    * @name: 转键值对
    * @param {type} 
-   * @return: 
-   * @msg: 
-   * @Author: zhangxin
-   * @LastEditors: zhangxin
-   * @LastEditTime: Do not Edit
    */
   objectToQueryString (obj) {
     return Object.keys(obj).map(function (key) {
@@ -236,11 +230,6 @@ export default {
   /**
    * @name: 防抖函数
    * @param {type} 
-   * @return: 
-   * @msg: 
-   * @Author: zhangxin
-   * @LastEditors: zhangxin
-   * @LastEditTime: Do not Edit
    */
   debounce (fn, delay = 300) {   //默认300毫秒
     var timer;
@@ -312,9 +301,6 @@ export default {
   /**
    * @name: 千分符
    * @param {type} 
-   * @return: 
-   * @msg: 
-   * @Author: zhangxin
    */
   addThousandthSign (numStr) {
     var regForm = /(\d{1,3})(?=(\d{3})+(?:$|\.))/g;
@@ -360,9 +346,6 @@ export default {
   /**
    * @name: 根据数字返回升降颜色
    * @param {type} 
-   * @return {type} 
-   * @msg: 
-   * @Author: zhangxin
    */
   numberColor (num) {
     if (typeof num !== 'number') {//不是数字类型直接返回#333
@@ -376,23 +359,4 @@ export default {
     }
     return '#333'
   },
-  getMonthBetween: function (start, end) {//传入的格式YYYY-MM
-    var result = [];
-    var s = start.split("-");
-    var e = end.split("-");
-    var minyear = new Date();
-    var maxyear = new Date();
-    minyear.setFullYear(s[0]);//开始年
-    maxyear.setFullYear(e[0]);//结束年
-    var min = new Date();
-    var max = new Date();
-    min.setFullYear(s[0], s[1] * 1 - 1);//开始月
-    max.setFullYear(e[0], e[1] * 1 - 1);//结束月
-    var curr = min;
-    while (moment(curr) <= moment(max)) {
-      result.push(moment(curr).format('YYYY-MM'))
-      curr = moment(curr).add(1, 'M');
-    }
-    return result
-  }
 }

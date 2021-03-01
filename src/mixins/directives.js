@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     mdAuthList: vm => {
-      return vm.$store.getters['Finance/getAuthList']
+      return vm.$store.getters['Clue/getAuthList']
     },
   },
 }

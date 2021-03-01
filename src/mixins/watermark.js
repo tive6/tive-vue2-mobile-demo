@@ -1,10 +1,3 @@
-/*
- * @desc: 水印插件(需在最外层增加ref="wmParent")
- * @author: zhangxin
- * @Date: 2020-06-24 13:09:44
- * @LastEditors: zhangxin
- * @LastEditTime: 2020-06-24 13:12:56
- */
 import Watermark from '@/common/watermark'
 
 export default {
