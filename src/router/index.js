@@ -15,6 +15,14 @@ const routes = [
     },
   },
   {
+    path: '/swiper',
+    name: 'swiper',
+    component: _import('swiper'),
+    meta: {
+      title: 'swiper demo',
+    },
+  },
+  {
     path: '*',
     redirect: '/',
   },
