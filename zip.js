@@ -21,10 +21,10 @@ function handle () {
     //creating archives
     let filename = `dist-${date}-${ver}.zip`
     const zip = new adm_zip()
-    // zip.addLocalFolder('./dist')
-    // zip.writeZip(`C:/Users/xxx/Desktop/zip/${filename}`)
+    zip.addLocalFolder('./dist')
+    zip.writeZip(`./${filename}`)
     // console.log(filename)
-    // console.log('dist 压缩完成')
+    console.log('dist 压缩完成')
     //extracting archives
     // var unzip = new adm_zip('C:/Users/xxx/dist.zip')
     // unzip.extractAllTo("C:/Users/xxx/Desktop/git", /*overwrite*/true)

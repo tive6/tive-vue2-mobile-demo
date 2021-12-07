@@ -3,6 +3,11 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err)
+}
+
 const _import = (path) => () => import(`@/views/${path}.vue`)
 
 const routes = [
@@ -29,7 +34,8 @@ const routes = [
 ];
 
 const routers = new Router({
-  // mode: 'history',
+  mode: 'history',
+  base: '/tive-vue2-mobile-demo/',
   linkActiveClass: '',
   linkExactActiveClass: 'tive-item-active',
   routes: [

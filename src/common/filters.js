@@ -1,15 +1,3 @@
-//补零
-const fillZero = (num) => {
-  return num < 10 ? '0' + num : num;
-};
-//带参数
-//货币形式
-const currency = (value, unit, decimal) => {
-  let reg = /^[0-9]+.?[0-9]*$/;
-  if (!reg.test(value)) return '';
-  value = decimal === undefined ? value : value.toFixed(decimal);
-  return `${unit}${value}`;
-};
 //首字母大写
 const capitalize = (value) => {
   if (!value) return '';
@@ -29,8 +17,6 @@ const numToFixed = (num, n) => {
 };
 
 export default {
-  fillZero,
-  currency,
   capitalize,
   numParseInt(num) {
     return parseInt(num);
@@ -40,26 +26,6 @@ export default {
   },
   numParseIntFormat(num) {
     return (+num).toFixed().replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
-  },
-  numWanFormat(num) {
-    return (num / 10000).toFixed().replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
-  },
-  numWanF1Format(num) {
-    // if (num!==0 && !Boolean(num)) {
-    //   return '-'
-    // } else {
-    // }
-    return numToFixed(num / 10000, 1).replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
-    // return (num/10000).toFixed(1).replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g,'$&,')
-  },
-  numToIntFormat(num) {
-    return numToFixed(num, 0).replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
-  },
-  numParseFlt1Format(num) {
-    return (+num).toFixed(1).replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
-  },
-  numParseFlt2Format(num) {
-    return (+num).toFixed(2).replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
   },
   formatFixedDate(date, fmt) {
     if (typeof date === 'number') {
@@ -93,7 +59,7 @@ export default {
     if (/(E+)/.test(fmt)) {
       fmt = fmt.replace(
         RegExp.$1,
-        (RegExp.$1.length > 1 ? (RegExp.$1.length > 2 ? '星期' : '周') : '') + week[date.getDay() + '']
+        (RegExp.$1.length > 1 ? (RegExp.$1.length > 2 ? '星期' : '周') : '') + week[date.getDay() + ''],
       );
     }
     for (var k in o) {

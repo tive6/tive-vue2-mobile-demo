@@ -21,7 +21,7 @@ const optimization = {
       },
       lib_vendor: {
         name: 'lib_vendor',
-        test: (module) => /echarts|moment|lodash|html2canvas/.test(module.context),
+        test: (module) => /echarts|lodash/.test(module.context),
         chunks: 'initial',
         priority: 8,
       },
@@ -46,7 +46,7 @@ const optimization = {
 
 module.exports = {
   lintOnSave: false,
-  publicPath: './',
+  publicPath: '/tive-vue2-mobile-demo/',
   assetsDir: 'static',
   css: {
     sourceMap: true,
@@ -99,7 +99,7 @@ module.exports = {
     }
     config.plugins.push(new webpack.BannerPlugin({
       banner:
-        'hash:[hash], chunkhash:[chunkhash], file:[file] \n@Version: 1.0.0 \n@Author: zmnaer(zxf) \n@Description: A web project based on Vue family barrel , @vue/cli and vantUI.',
+        'hash:[hash], chunkhash:[chunkhash], file:[file] \n@Version: 1.0.0 \n@Author: Tiven(tive) \n@Description: A web project based on Vue family barrel , @vue/cli and vantUI.',
       entryOnly: true,
     }));
     // 解决moment过大问题

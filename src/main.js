@@ -7,13 +7,12 @@ import Vuex from 'vuex'
 import store from './store'
 import filters from './common/filters'
 import { ajax } from './api/ajax'
-import BP from '@/common/buryingPoint'
 import 'lib-flexible'
 import './assets/css/style.scss'
 
 import {
   Icon, Popup, Toast, Dialog,
-  Lazyload
+  Lazyload, Tabbar, TabbarItem,
 } from 'vant'
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -24,17 +23,12 @@ if (isDev) {
   // new Vconsole();
 }
 
-Vue.use(VueRouter)
-Vue.use(Vuex)
-
-const originalPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch((err) => err)
-}
 Vue.use(Icon)
   .use(Popup)
   .use(Toast)
   .use(Dialog)
+  .use(Tabbar)
+  .use(TabbarItem)
   .use(Lazyload, {});
 
 Object.keys(filters).forEach((key) => {
@@ -46,7 +40,6 @@ Vue.prototype.$http = {
   ajax,
 }
 Vue.prototype.$utils = Utils
-Vue.prototype.$BP = BP
 Vue.config.productionTip = false
 
 new Vue({

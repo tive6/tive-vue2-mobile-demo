@@ -28,8 +28,7 @@ export default class CreateEChart {
       },
       get: (target, key, receiver) => {
         return () => {
-          // console.log(target)
-          // console.log(key)
+          // console.log(target, key)
           if (key === 'dispose') {
             this.dispose()
           }
@@ -43,9 +42,7 @@ export default class CreateEChart {
         }
       },
       apply: (target, ctx, args) => {
-        // console.log(target)
-        // console.log(ctx)
-        // console.log(args)
+        // console.log(target, ctx, args)
         return Reflect.apply(...arguments)
       }
     })

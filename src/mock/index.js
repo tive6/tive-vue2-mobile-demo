@@ -1,5 +1,5 @@
-import Mocard from './mocard'
+import User from './user'
 
 export default {
-  Mocard,
+  User,
 }
